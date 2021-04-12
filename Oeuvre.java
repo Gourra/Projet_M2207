@@ -6,7 +6,7 @@ class Oeuvre {
     private int annee;
 
     //Construteur
-    public void Oeuvre(String ref, String aut, String titr, int an){
+    public Oeuvre(String ref,String aut,String titr,int an){
         reference = ref;
         auteur = aut;
         titre = titr;
@@ -18,6 +18,11 @@ class Oeuvre {
     public String getAutor(){return auteur;}
     public String getTitle(){return titre;}
     public int getDate(){return annee;}
+    
+    public void setReference(String A){reference = A;}
+    public void setAutor(String A){auteur = A;}
+    public void setTitle(String A){titre = A;}
+    public void setDate(int A){annee = A;}
 
     //Méthodes 
     public void afficher(){
