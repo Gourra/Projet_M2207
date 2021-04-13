@@ -16,8 +16,7 @@ class Video extends Oeuvre{
 
     //Méhodes
     public void afficher(){
-        System.out.println(titre + " est réalisé par " + auteur + " en " + annee + " : ref n° " + reference);
+        System.out.println("Reference : " + reference + "Titre : " + titre + " Auteur : " + auteur + " Date de parution : " + annee);
         System.out.println("Format : " + format + " duree : " + duree);
-        System.out.println("----------------------------------------------------------------------------------");
     }
 }

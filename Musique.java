@@ -16,8 +16,7 @@ class Musique extends Oeuvre{
 
     //Méthodes
     public void afficher(){
-        System.out.println(titre + " est réalisé par " + auteur + " en " + annee + " : ref n° " + reference);
+        System.out.println("Reference : " + reference + "Titre : " + titre + " Auteur : " + auteur + " Date de parution : " + annee);
         System.out.println("Support : " + support + " nb pistes : " + pistes);
-        System.out.println("----------------------------------------------------------------------------------");
     }
 }
