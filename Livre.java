@@ -19,8 +19,7 @@ class Livre extends Oeuvre{
 
     //méthodes
     public void afficher(){
-        System.out.println(titre + " est réalisé par " + auteur + " en " + annee + " : ref n° " + reference);
+        System.out.println("Reference : " + reference + "Titre : " + titre + " Auteur : " + auteur + " Date de parution : " + annee);
         System.out.println("Edité par " + editeur + " pour " + pages + " pages n° ISBN : " + ISBN);
-        System.out.println("----------------------------------------------------------------------------------");
     }
 }

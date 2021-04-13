@@ -3,10 +3,10 @@ class Oeuvre {
     protected String reference;
     protected String auteur;
     protected String titre;
-    protected int annee;
+    protected String annee;
 
     //Construteur
-    public Oeuvre(String ref,String aut,String titr,int an){
+    public Oeuvre(String ref,String aut,String titr,String an){
         reference = ref;
         auteur = aut;
         titre = titr;
@@ -17,11 +17,10 @@ class Oeuvre {
     public String getReference(){return reference;}
     public String getAutor(){return auteur;}
     public String getTitle(){return titre;}
-    public int getDate(){return annee;}
+    public String getDate(){return annee;}
 
     //Méthodes 
     public void afficher(){
-        System.out.println(titre + " est réalisé par " + auteur + " en " + annee + " : ref n° " + reference);
-        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("Reference : " + reference + ", Titre : " + titre + ", Auteur : " + auteur + ", Date de parution : " + annee);
     }
 }
