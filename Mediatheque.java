@@ -1,36 +1,36 @@
+import java.util.ArrayList;
+
 class Mediatheque{
     //Attributs
-    Oeuvre [] rep;
-    int n;
+    ArrayList<Oeuvre> rep;
 
     //Construtor
-    public Mediatheque(String [] [] tab){
-        n = tab.length;
-        rep = new Oeuvre [n];
-
+    public Mediatheque(String [] [] tab){  // cree un tableau d'Oeuvres a partir 
+       this.rep = new ArrayList<Oeuvre>();
+       int n = tab.length;
+       
         for(int i =0 ; i< n; i++){
-            rep[i] = new Oeuvre(tab[i][0],tab[i][1],tab[i][2],tab[i][3]);
+            rep.add(new Oeuvre(tab[i][0],tab[i][1],tab[i][2],tab[i][3]));
         }
     }
+
     //Methode d'accès
-    public Oeuvre[] getRep(){return rep;}
-    public int getN(){return n;}
-    public void setN(int o){n=o;}
+    public ArrayList<Oeuvre> getRep(){return rep;}
 
     //Méthodes
     public void addOeuvre(String a, String b, String c, String d){
-        n += 1 ;
-        Oeuvre [] rep2 = new Oeuvre [n];
-        for(int i =0; i<(n-1); i++){
-            rep2[i] = rep[i];
-        }
-        rep2[n] = new Oeuvre(a,b,c,d);
-        rep = rep2;
+        Oeuvre tempmem = new Oeuvre(a,b,c,d);
+        rep.add(tempmem);
     }
 
     public void afficher(){
-        for(int i =0 ; i<n; i++){
-            rep[i].afficher();
-        }
+        int n = rep.size();
+        for(int i=0; i<n; i++){
+            if(i==0){
+                rep.get(i).afficher(1);
+            }else{
+                rep.get(i).afficher(0);
+            }
+        }    
     }
 }
