@@ -1,16 +1,20 @@
 class test{
     public static void main(String[] args){
-        //Oeuvre O1 = new Oeuvre("hjzi88z4","Beaudelaire","Les Fleurs du Mal",1857);
-        //O1.afficher();
+        //Oeuvre O1 = new Oeuvre("hjzi88z4","Beaudelaire","Les Fleurs du Mal","1857");
+        //O1.afficher(1);
+        //O1.afficher(0);
         
-        //Livre L1 = new Livre("hjzi88z4","Beaudelaire","Les Fleurs du Mal",1857,"1234567897412","Flamarion",250);
-        //L1.afficher();
+        //Livre L1 = new Livre("hjzi88z4","Beaudelaire","Les Fleurs du Mal","1857","1234567897412","Flamarion","250");
+        //L1.afficher(1);
+        //L1.afficher(0);
 
-        //Video V1 = new Video("hjzi88z4","Beaudelaire","Les Fleurs du Mal",1857,"MP4",150);
-        //V1.afficher();
+        //Video V1 = new Video("hjzi88z4","Beaudelaire","Les Fleurs du Mal","1857","MP4","150");
+        //V1.afficher(1);
+        //V1.afficher(0);
 
-        //Musique M1 = new Musique("hjzi88z4","Beaudelaire","Les Fleurs du Mal","1857",DVD,10);
-        //M1.afficher();
+        //Musique M1 = new Musique("hjzi88z4","Beaudelaire","Les Fleurs du Mal","1857","DVD","10");
+        //M1.afficher(1);
+        //M1.afficher(0);
         
         String [] [] tab = {
             //{reference , auteur, nom, date}
