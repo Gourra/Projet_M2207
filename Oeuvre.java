@@ -23,7 +23,7 @@ class Oeuvre {
     public void afficher(int textTrue){
         if(textTrue == 1){
             System.out.println(" Reference   |   Titre   |   Auteur  |   Date    |");    // Si la fonction est passé avec 1 en argument -> affiche la valeur de l'object de facon plus élégante
-            System.out.println("-------------------------------------------------");
+            System.out.println("--------------------------------------------------");
             System.out.println(reference +" | "+ titre +" | "+ auteur +" | "+ annee);
         }else{
             System.out.println(reference +" | "+ titre +" | "+ auteur +" | "+ annee);   // Sinon affichage classique
