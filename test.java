@@ -37,6 +37,10 @@ class test{
         Mediatheque MD = new Mediatheque(tab);
         MD.addOeuvre("fezazffe","moi","toi","2020");
         MD.afficher();
+        MD.rechercherTitre("La Peste");
+        MD.rechercherAuteur("Jami");
+        MD.rechercherDate("2013");
+        System.out.println(MD.CombienDate("2013"));
 
 
     }
