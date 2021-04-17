@@ -96,10 +96,10 @@ class Mediatheque{
         printFind(find);
     }
 
-    public int CombienDate(String nom){ //Filtre par Date
+    public int CombienDate(String nom){ //Compteur d'Oeuvre en fonction de la date
         int n = rep.size();
         int tailleFind = 0;
-        for(int l=0; l<n; l++){              //Determination de la taille du tableau final
+        for(int l=0; l<n; l++){              
             if(rep.get(l).getDate().equals(nom)){
                 tailleFind ++;
             }
