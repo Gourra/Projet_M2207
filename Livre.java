@@ -16,6 +16,7 @@ class Livre extends Oeuvre{
     public String getIsbn(){return ISBN;}
     public String getEditor(){return editeur;}
     public String getPages(){return pages;}
+    public String getType(){return "Livre";}
 
     //méthodes
     public void afficher(int textTrue){

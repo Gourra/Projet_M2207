@@ -5,35 +5,76 @@ class Mediatheque{
     ArrayList<Oeuvre> rep;
 
     //Constructeur
-    public Mediatheque(String [] [] tab){  // cree un tableau d'Oeuvres a partir d'un tableau
+    public Mediatheque(){  // cree un tableau d'Oeuvres a partir d'un tableau
        this.rep = new ArrayList<Oeuvre>();
-       int n = tab.length;
-       
-        for(int i =0 ; i< n; i++){
-            rep.add(new Oeuvre(tab[i][0],tab[i][1],tab[i][2],tab[i][3]));
-        }
     }
 
     //Methode d'accès
     public ArrayList<Oeuvre> getRep(){return rep;}
 
     //Méthodes
-    public void addOeuvre(String a, String b, String c, String d){ //Ajoute une Oeuvre au Tableau
-        Oeuvre tempmem = new Oeuvre(a,b,c,d);
+
+    //################################################
+    //              Ajout d'oeuvre                  //
+    //################################################
+
+    public void addLivre(String a, String b, String c, String d, String e, String f, String g){ //Ajoute un livre au Tableau
+        Livre tempmem = new Livre(a,b,c,d,e,f,g);
         rep.add(tempmem);
     }
 
-    public void afficher(){ //Affiche le contenu avec les Détails
-        int n = rep.size();
-        for(int i=0; i<n; i++){
-            if(i==0){
-                rep.get(i).afficher(1); //Afficher le premier avec "esthétisme" (entete de tableau)
-            }else{
-                rep.get(i).afficher(0); //Affichage lambda
-            }
-        }    
-        System.out.println("---------------------------------------------------------------------------------------------");
+    public void addMusique(String a, String b, String c, String d, String e, String f){ //Ajoute une musique au Tableau
+        Musique tempmem = new Musique(a,b,c,d,e,f);
+        rep.add(tempmem);
     }
+
+    public void addVideo(String a, String b, String c, String d, String e, String f){ //Ajoute une Video au Tableau
+        Video tempmem = new Video(a,b,c,d,e,f);
+        rep.add(tempmem);
+    }
+
+
+    //################################################
+    //                    Affichage                 //
+    //################################################
+
+    public void afficher(){ //Affiche le contenu avec les Détails
+        System.out.println("LIVRES :");
+        System.out.println("");
+        System.out.println(" Reference   |   Titre   |   Auteur  |   Date    |    Editeur    |    Pages    |    ISBN    |");
+        System.out.println("---------------------------------------------------------------------------------------------");
+        for(int i = 0; i < rep.size(); i++) {
+            if(rep.get(i) instanceof Livre){
+                rep.get(i).afficher(0);
+            }
+        }
+        System.out.println("");
+        System.out.println("MUSIQUES :");
+        System.out.println("");
+        System.out.println(" Reference   |   Titre   |   Auteur  |   Date    |    Support    |    Pistes    |");    
+        System.out.println("---------------------------------------------------------------------------------------------");
+        for(int i = 0; i < rep.size(); i++) {
+            if(rep.get(i) instanceof Musique){
+                rep.get(i).afficher(0);
+            }
+        }
+        System.out.println("");
+        System.out.println("VIDEOS :");
+        System.out.println("");
+        System.out.println(" Reference   |   Titre   |   Auteur  |   Date    |    Format    |    Duree    |");   
+        System.out.println("---------------------------------------------------------------------------------------------");
+        for(int i = 0; i < rep.size(); i++) {
+            if(rep.get(i) instanceof Video){
+                rep.get(i).afficher(0);
+            }
+        }
+        System.out.println("---------------------------------------------------------------------------------------------");
+        System.out.println("");
+    }
+
+    //################################################
+    //                   Recherche                  //
+    //################################################
 
     public void rechercherTitre(String nom){ //Filtre par titre
         int n = rep.size();
