@@ -13,6 +13,7 @@ class Musique extends Oeuvre{
     //Méthodes d'accès
     public String getSupport(){return support;}
     public String getPistes(){return pistes;}
+    public String getType(){return "Musique";}
 
     //Méthodes
     public void afficher(int textTrue){
