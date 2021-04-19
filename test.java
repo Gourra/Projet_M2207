@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 class test{
 
@@ -21,15 +20,8 @@ class test{
         MD.addVideo("V0002", "Jami", "C'est pas Sorcier 21", "2015", "MP4" , "1250");
         MD.addVideo("V0003", "Jami", "C'est pas Sorcier 53", "2020", "MP4" , "1360");
         MD.addVideo("V0004", "Jami", "C'est pas Sorcier 54", "2020", "MP4" , "1185");
-
-        //MD.rechercherTitre("La Peste");
-        //MD.rechercherAuteur("Jami");
-        //MD.rechercherDate("2013");
-        
-        //System.out.println(MD.CombienDate("2013"));
-
-        
-        boolean Active = true;
+    
+        boolean Active = true; //Maintien une boucle infini jusqu'a changement d'etat
 
         while(Active){
             switch(menuChoixPrincipal()){
@@ -131,7 +123,7 @@ class test{
                             System.out.println("------------------------------------------------------------");
 
                         }break;
-                        case "4":{ // Quitte la boucle -> choix annuler  
+                        case "4":{ // Quitte le menu -> choix annuler  
                         }break;
                         default:{ //Message Erreur
                             System.out.println("Pas d'options correspondantes ... ");
@@ -139,7 +131,40 @@ class test{
                     }
                 }break;
                 case "3" : { // Rechercher Dans la bibliothèque
-                    System.out.println("cas 3");
+                    switch(menuRechercherOeuvre()){
+                        case "1":{ //Rechercher par titre
+                            Scanner clavier_recherche_titre = new Scanner(System.in);
+                            System.out.println("Titre de l'oeuvre a rechercher : ");
+                            String title = clavier_recherche_titre.nextLine();
+                            System.out.println("");
+                            
+                            MD.rechercherTitre(title);
+                        }break;
+                        case "2":{ //Rechercher par auteur
+                            Scanner clavier_recherche_auteur = new Scanner(System.in);
+                            System.out.println("Rechercher un auteur : ");
+                            String author = clavier_recherche_auteur.nextLine();
+                            System.out.println("");
+                            
+                            MD.rechercherAuteur(author);
+
+                        }break;
+                        case "3":{ //Rechercher par date
+                            Scanner clavier_recherche_date = new Scanner(System.in);
+                            System.out.println("Annee de parution : ");
+                            String date = clavier_recherche_date.nextLine();
+                            System.out.println("");
+                            System.out.println("Il y à " + MD.CombienDate(date) + " Oeuvres correspondantes");
+                            
+                            MD.rechercherDate(date);
+                            
+                        }break;
+                        case "4":{ // Quitte le menu -> choix annuler  
+                        }break;
+                        default:{ //Message d'erreur
+                            System.out.println("Pas d'options correspondantes ... ");
+                        }break;
+                    }
                 }break;
                 case "4" : { //Arret de la boucle -> fin de programme
                     Active = false ;
@@ -151,7 +176,7 @@ class test{
             }
         }
     }
-
+    
     public static String menuChoixPrincipal(){ //Menu qui retourne le choix fait par l'utilisateur | MENU PRINCIPAL
         Scanner clavier = new Scanner(System.in);
 
@@ -174,6 +199,22 @@ class test{
         System.out.println("[1] LIVRE ");
         System.out.println("[2] MUSIQUE");
         System.out.println("[3] VIDEO ");
+        System.out.println("[4] Annuler");
+        System.out.println("Votre choix :  ");
+
+        String choix = clavier.next();
+        System.out.println("");
+
+        return choix;
+    }
+
+    public static String menuRechercherOeuvre(){ //Menu qui retourne le choix fait par l'utilisateur | MENU AJOUTER OEUVRE
+        Scanner clavier = new Scanner(System.in);
+        
+        System.out.println("Quel type de rechercher faire ? ");
+        System.out.println("[1] Chercher par le titre ");
+        System.out.println("[2] Chercher par l'auteur ");
+        System.out.println("[3] Chercher par la date");
         System.out.println("[4] Annuler");
         System.out.println("Votre choix :  ");
 

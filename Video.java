@@ -13,7 +13,6 @@ class Video extends Oeuvre{
     //Méthodes d'accès
     public String getFormat(){return format;}
     public String getDuree(){return duree;}
-    public String getType(){return "Video";}
 
     //Méhodes
     public void afficher(int textTrue){
