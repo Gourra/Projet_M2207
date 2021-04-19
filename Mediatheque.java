@@ -134,7 +134,7 @@ class Mediatheque{
                 j++;
             }
         }
-        printFind(find);
+        printFindDate(find);
     }
 
     public int CombienDate(String nom){ //Compteur d'Oeuvre en fonction de la date
@@ -148,7 +148,11 @@ class Mediatheque{
         return tailleFind;
     }
 
-    public void printFind(Oeuvre [] find){
+    //################################################
+    //        Affichage des recherches              //
+    //################################################
+
+    public void printFind(Oeuvre [] find){ // Affichage pour rechercherTitre() & rechercherAuteur()
         int n = find.length;
         if(n==0){                               //Pas de résultat
             System.out.println("Pas de Résultat");
@@ -158,6 +162,44 @@ class Mediatheque{
                     find[i].afficher(1); //Afficher le premier avec "esthétisme" (entete de tableau)
                 }else{
                     find[i].afficher(0); //Affichage lambda
+                }
+            }
+        }
+        System.out.println("---------------------------------------------------------------------------------------------");
+    } 
+
+    public void printFindDate(Oeuvre [] find){ // Affichage pour rechercherDate() --> affichage plus complexe car different types d'oeuvres par an
+        int n = find.length;
+        if(n==0){                               //Pas de résultat
+            System.out.println("Pas de Résultat");
+        }else{
+            System.out.println("LIVRES :");
+            System.out.println("");
+            System.out.println(" Reference   |   Titre   |   Auteur  |   Date    |    Editeur    |    Pages    |    ISBN    |");
+            System.out.println("---------------------------------------------------------------------------------------------");
+            for(int i = 0; i < n; i++) {
+                if(find[i] instanceof Livre){
+                    find[i].afficher(0);
+                }
+            }
+            System.out.println("");
+            System.out.println("MUSIQUES :");
+            System.out.println("");
+            System.out.println(" Reference   |   Titre   |   Auteur  |   Date    |    Support    |    Pistes    |");    
+            System.out.println("---------------------------------------------------------------------------------------------");
+            for(int i = 0; i < n; i++) {
+                if(find[i] instanceof Musique){
+                    find[i].afficher(0);
+                }
+            }
+            System.out.println("");
+            System.out.println("VIDEOS :");
+            System.out.println("");
+            System.out.println(" Reference   |   Titre   |   Auteur  |   Date    |    Format    |    Duree    |");   
+            System.out.println("---------------------------------------------------------------------------------------------");
+            for(int i = 0; i < n; i++) {
+                if(find[i] instanceof Video){
+                    find[i].afficher(0);
                 }
             }
         }

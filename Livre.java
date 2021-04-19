@@ -16,9 +16,8 @@ class Livre extends Oeuvre{
     public String getIsbn(){return ISBN;}
     public String getEditor(){return editeur;}
     public String getPages(){return pages;}
-    public String getType(){return "Livre";}
 
-    //méthodes
+    //Méthodes
     public void afficher(int textTrue){
         if(textTrue == 1){
             System.out.println(" Reference   |   Titre   |   Auteur  |   Date    |    Editeur    |    Pages    |    ISBN    |");    // Si la fonction est passé avec 1 en argument -> affiche la valeur de l'object de facon plus élégante
